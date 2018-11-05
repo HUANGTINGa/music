@@ -23,3 +23,9 @@
 
     # build for production with minification
     $ npm run build
+#### 图示
+![Image text](https://raw.githubusercontent.com/HUANGTINGa/music/master/build/image/1.png)
+![Image text](https://raw.githubusercontent.com/HUANGTINGa/music/master/build/image/2.png)
+![Image text](https://raw.githubusercontent.com/HUANGTINGa/music/master/build/image/3.png)
+![Image text](https://raw.githubusercontent.com/HUANGTINGa/music/master/build/image/4.png)
+![Image text](https://raw.githubusercontent.com/HUANGTINGa/music/master/build/image/5.png)
