@@ -1,0 +1,124 @@
+.audioPlayerPage{
+    position: fixed;top:0;left:0;z-index:3;background:#fff;width: 100%;height: 100%;
+    header{
+        width: 100%;height: 50px;position: relative;
+        text-align:center;line-height: 50px;color:#fff;
+        .icon-houtui1{
+            position: absolute;top:0;left:0;width: 50px;height: 50px;
+            text-align:center;line-height: 50px;font-size:26px;
+        }
+    }
+    .content{
+        padding:30px 0;position: relative;overflow: hidden;
+        .cd{
+            width: 80%;margin:0 auto;position: relative;
+            img{width: 100%;display: block;}
+            .singerbg{
+                width: 60%;border-radius:50%;overflow: hidden;
+                position: absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+                transition:all 1s;
+                animation:rotate 8s linear infinite;
+                animation-play-state:paused;
+            }
+            .singerbg.cur{animation-play-state:running;}
+            @keyframes rotate{
+                from{transform:translate(-50%, -50%) rotate(0deg);}
+                to{transform:translate(-50%, -50%) rotate(360deg);}
+            }
+        }
+        .swith{
+            width:110px;height: 165px;position: absolute;top:-20px;left:52%;
+            transform:translateX(-50%) rotate(-25deg);
+            transform-origin:15px 15px;transition:all 0.8s;
+            img{width: 100%;display: block;}
+        }
+        .swith.cur{transform:translateX(-50%) rotate(0deg);}
+    }
+    .lyric{overflow: hidden;
+        ul{ position: relative;transition: all 0.3s;
+            li {
+                text-align:center;height:26px;line-height:26px;
+                span.animationLyric_origin {
+                    position:relative;color:#fff;height:26px;
+                    line-height:26px;display: inline-block;
+                    span.animationLyric_current {
+                        position:absolute;top:0;left:0;
+                        overflow:hidden;white-space:nowrap;line-height:26px;
+                        width:0%;height:26px;animation-play-state: paused;color:red;
+                    }
+                }
+            }
+            li.cur{
+                span.animationLyric_current {
+                    animation-name: lyricdonghua; color: red;
+                    animation-timing-function: linear;
+                    @keyframes lyricdonghua {
+                        from {width: 0%;}
+                        to {width: 100%;}
+                    }
+                }
+            }
+        }
+    }
+    ul.setting{
+        overflow: hidden;
+        li{
+            float: left;width: 25%;height: 50px;line-height: 50px;
+            text-align:center;color:#fff;font-size:36px;
+        }
+        li.icon-xin1{font-size:30px;}
+    }
+    .progressBar{
+        overflow: hidden;padding:12px 3%;font-size:14px;color:rgba(255,255,255,0.6);
+        p{float: left;}
+        p.start{width: 12%;height: 40px;line-height: 40px;text-align:right;}
+        p.end{width: 12%;height: 40px;line-height: 40px;text-align:left;}
+        p.range{
+            width: 76%;padding:0 3%;margin:19px auto;
+            span.duration{
+                width: 100%;height: 2px;display: block;
+                background:rgba(255,255,255,0.5);position: relative;
+                span.currentTime{
+                    width: 0%;height: 2px;position: absolute;
+                    top:0;left:0;background: #c20c02;
+                }
+            }
+        }
+    }
+    .controller{
+        position: relative;text-align:center;line-height: 50px;height: 50px;
+        color:rgba(255, 255, 255, 0.6);
+        p{position: absolute;top:0;font-size:30px;}
+        p.playModeBtn{left:3%;}
+        p.playListBtn{right:3%;}
+        ul{overflow: hidden; width: 68%;margin:0 auto;
+            li{float: left;width: 33.333%;font-size:40px;}
+            li.icon-bofang, li.icon-pause-20{font-size:50px;}
+        }
+    }
+    .popwindow{
+        opacity:0;
+        width: 100%;height: 100%;z-index:-1;
+        position: fixed;top:0;left:0;background:rgba(0,0,0,0.6);
+    }
+    .popwindow.cur{opacity:1;z-index:100;transition:all 0.8s;}
+    .playList.cur{bottom:0;z-index:101;}
+    .playList{
+        position: absolute;bottom:-300px;width: 100%;height: 300px;
+        background: #fff;transition:all 0.8s;
+        ul{
+            height: 250px;overflow-y:scroll;
+            li{overflow: hidden;
+               span{float: left;line-height: 50px;height: 50px;}
+               span.laba{width: 50px;text-align:center;font-size:28px;}
+            }
+            li.cur{color:#c20c0c;}
+        }
+        footer{
+            position: absolute;bottom:0;width: 100%;height: 50px;text-align:center;
+            span{
+                display: block;height: 50px;line-height: 50px;font-size:28px;
+            }
+        }
+    }
+}
